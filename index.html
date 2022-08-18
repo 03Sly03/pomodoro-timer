@@ -8,15 +8,24 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="modal-container">
+        <div class="overlay">
+        </div>
+            <div class="modal">
+                <h2>Il est temps de faire une pause ...</h2>
+                <div class="buttons">
+                    <button class="close-modal" id="modal-agree-btn">Go faire une pause !</button>
+                    <button class="wait">Attend... encore 2 minutes</button>
+                </div>
+            </div>
+    </div>
     <div class="display">
-        <h1>POMODORO TIMER !</h1>
-        <P class="display__screen"><span class="minute">00</span>:<span class="second">11</span></P>
+        <h1 id="title">POMODORO TIMER !</h1>
+        <p class="display__screen"><span class="minute">00</span>:<span class="second">11</span></p>
         
        <div class="btn-frame">
-        <div>
+        <div class="pomodoro-buttons">
             <button class="btn btn_start">START</button>
-        </div>
-        <div>
             <button class="btn btn_reset">RESET</button>
         </div>
        </div>

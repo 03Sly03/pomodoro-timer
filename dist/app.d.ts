@@ -1,9 +1,13 @@
 declare let onScreen: Element | null;
-declare let minute: Element;
-declare let second: Element;
-declare let btnStart: Element;
+declare let minute: HTMLTextAreaElement;
+declare let second: HTMLTextAreaElement;
+declare let btnStart: HTMLTextAreaElement;
+declare let title: HTMLTextAreaElement;
 declare let interval: number;
-declare let buttonStart: Element | null;
+declare let numberOfUse: number;
+declare let buttonStart: HTMLTextAreaElement;
 declare function countDown(): void;
 declare let buttonReset: Element | null;
 declare function reset(): void;
+declare let agreeBtn: HTMLTextAreaElement;
+declare function toggleModal(): void;

@@ -1,9 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Macondo&display=swap');
+
 body {
+    margin: 0;
     background-color: skyblue;
+    font-family: 'Macondo', cursive;
+    width: 100vw;
+    height: 100vh;
+    background-image: url(https://www.manager-go.com/assets/Uploads/concentration2.jpg);
+    background-size: cover;
 }
 
 h1 {
     text-align: center;
+    font-size: 3rem;
+    background-color: rgba(255, 255, 255, 0.900);
+    padding: 30px;
+    border-radius: 100px;
 }
 
 .display {
@@ -16,19 +28,200 @@ h1 {
 }
 
 .display__screen {
-    font-size: 3rem;
+    display: flex;
+    justify-content: space-around;
+    width: 300px;
+    text-align: center;
+    font-size: 4rem;
     font-weight: bolder;
+    background-color: rgba(255, 255, 255, 0.900);
+    padding: 30px;
+    border-radius: 50px;
+    letter-spacing: 15px;
+}
+
+.minute {
+    width: 100px;
+}
+
+.second {
+    width: 100px;
 }
 
 .btn-frame {
     display: flex;
 }
 
+.pomodoro-buttons {
+    margin-top: 50px;
+    width: 500px;
+    display: flex;
+    justify-content: space-around;
+}
+
 .btn {
-    background-color: lightgreen;
-    width: 100px;
+    background-color: rgba(136, 44, 221, 0.900);
+    width: 200px;
     border: none;
     margin: 10px;
-    padding: 10px;
+    padding: 20px;
     border-radius: 5px;
+    font-family: 'Macondo', cursive;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.modal-container {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    visibility: hidden;
+}
+
+.modal-container.active {
+    visibility: visible;
+}
+
+.modal {
+    width: 80%;
+    padding: 30px;
+    max-width: 500px;
+    min-width: 300px;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 5px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, calc(-50% - 50px));
+    text-align: center;
+}
+
+.buttons {
+    margin-top: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+
+
+/* .close-modal {
+    padding: 8px 10px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	background-color: red;
+	color: white;
+} */
+
+/* .wrap {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  } */
+
+.close-modal {
+    min-width: 100px;
+    min-height: 40px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1.3px;
+    font-weight: 700;
+    color: white;
+    background: green;
+    background: linear-gradient(90deg, rgb(0, 137, 0) 0%, rgb(0, 155, 0) 100%);
+    border: none;
+    border-radius: 1000px;
+    box-shadow: 12px 12px 24px rgba(79, 209, 197, .64);
+    transition: all 0.3s ease-in-out 0s;
+    cursor: pointer;
+    outline: none;
+    position: relative;
+    padding: 10px;
+}
+
+.close-modal:hover,
+.button:focus {
+    color: white;
+    transform: translateY(-6px);
+}
+
+.close-modal:hover::before,
+.close-modal:focus::before {
+    opacity: 1;
+}
+
+.close-modal::after {
+    content: '';
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    border: 6px solid green;
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: ring 1.5s infinite;
+}
+
+.close-modal:hover::after,
+.close-modal:focus::after {
+    animation: none;
+    display: none;
+}
+
+@keyframes ring {
+    0% {
+        width: 30px;
+        height: 30px;
+        opacity: 1;
+    }
+
+    100% {
+        width: 100px;
+        height: 100px;
+        opacity: 0;
+    }
+}
+
+.wait {
+    padding: 8px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: green;
+    color: white;
+}
+
+.wait:hover {
+    animation: shake 0.5s;
+}
+
+@keyframes shake {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    25%,
+    75% {
+        transform: translateX(10px);
+    }
+
+    50% {
+        transform: translateX(-10px);
+    }
+}
+
+.overlay {
+    opacity: 1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #333333d3;
 }

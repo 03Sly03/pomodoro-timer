@@ -1,11 +1,13 @@
 let onScreen = document.querySelector(".display__screen");
-let minute = document.querySelector(".minute")!;
-let second = document.querySelector(".second")!;
-let btnStart = document.querySelector(".btn_start")!;
+let minute = document.querySelector(".minute") as HTMLTextAreaElement;
+let second = document.querySelector(".second") as HTMLTextAreaElement;
+let btnStart = document.querySelector(".btn_start") as HTMLTextAreaElement;
+let title = document.querySelector("#title") as HTMLTextAreaElement;
 let interval: number;
+let numberOfUse: number = 0;
 
-let buttonStart = document.querySelector(".btn_start");
-buttonStart!.addEventListener("click", () => {
+let buttonStart = document.querySelector(".btn_start") as HTMLTextAreaElement;
+buttonStart.addEventListener("click", () => {
     clearInterval(interval);
     if (btnStart.innerHTML === "START") {
         btnStart.innerHTML = "PAUSE";
@@ -34,11 +36,13 @@ function countDown() {
         second.innerHTML = "59";
     }
     if (minute.innerHTML === "00" && second.innerHTML === "00") {
-        alert("Driiiing");
+        toggleModal();
         second.innerHTML = "0" + 0;
         minute.innerHTML = "25";
         btnStart.innerHTML = "START";
         clearInterval(interval);
+        numberOfUse++;
+        title.innerText = `${title.innerText} (${numberOfUse})`;
     }
 }
 
@@ -50,4 +54,12 @@ function reset() {
     minute.innerHTML = "25";
     second.innerHTML = "00";
     btnStart.innerHTML = "START";
+}
+
+let agreeBtn = document.querySelector("#modal-agree-btn") as HTMLTextAreaElement;
+agreeBtn.addEventListener("click", toggleModal);
+
+function toggleModal() {
+    const modalContainer = document.querySelector(".modal-container") as HTMLTextAreaElement;
+    modalContainer.classList.toggle('active');
 }
