@@ -4,6 +4,7 @@ let minute = document.querySelector(".minute");
 let second = document.querySelector(".second");
 let btnStart = document.querySelector(".btn_start");
 let title = document.querySelector("#title");
+let buzzer = document.querySelector('#buzzer');
 let interval;
 let numberOfUse = 0;
 let buttonStart = document.querySelector(".btn_start");
@@ -36,6 +37,7 @@ function countDown() {
         second.innerHTML = "59";
     }
     if (minute.innerHTML === "00" && second.innerHTML === "00") {
+        buzzer.play();
         toggleModal();
         second.innerHTML = "0" + 0;
         minute.innerHTML = "25";

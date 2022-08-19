@@ -3,6 +3,7 @@ let minute = document.querySelector(".minute") as HTMLTextAreaElement;
 let second = document.querySelector(".second") as HTMLTextAreaElement;
 let btnStart = document.querySelector(".btn_start") as HTMLTextAreaElement;
 let title = document.querySelector("#title") as HTMLTextAreaElement;
+let buzzer = document.querySelector('#buzzer') as HTMLMediaElement;
 let interval: number;
 let numberOfUse: number = 0;
 
@@ -36,6 +37,7 @@ function countDown() {
         second.innerHTML = "59";
     }
     if (minute.innerHTML === "00" && second.innerHTML === "00") {
+        buzzer.play();
         toggleModal();
         second.innerHTML = "0" + 0;
         minute.innerHTML = "25";
@@ -46,8 +48,8 @@ function countDown() {
     }
 }
 
-let buttonReset = document.querySelector(".btn_reset");
-buttonReset!.addEventListener("click", reset);
+let buttonReset = document.querySelector(".btn_reset") as HTMLTextAreaElement;
+buttonReset.addEventListener("click", reset);
 
 function reset() {
     clearInterval(interval);
